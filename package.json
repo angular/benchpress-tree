@@ -1,0 +1,16 @@
+{
+  "name": "bp-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./runBenchmark.sh"
+  },
+  "author": "jeffbcross",
+  "license": "Apache 2",
+  "dependencies": {
+    "benchpress": "^2.0.0-alpha.11",
+    "http-server": "^0.7.5",
+    "protractor": "^1.7.0"
+  }
+}
