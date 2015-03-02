@@ -3,9 +3,9 @@ var baselineRootTreeComponent;
 var count = 0;
 
 var BASELINE_TREE_TEMPLATE = createTemplate(
-    '<span>_<template class="ng-binding"></template><template class="ng-binding"></template></span>');
+    '<div><div class="value">_</div><template></template><template></template></div>');
 var BASELINE_IF_TEMPLATE = createTemplate(
-    '<span template="if"><tree></tree></span>');
+    '<div template="if" class="leaf"><tree></tree></div>');
 
 function createTemplate (html) {
   var t = document.createElement('template');
@@ -89,10 +89,9 @@ function BaseLineTreeComponent (element) {
   
   this.element = element;
   var clone = BASELINE_TREE_TEMPLATE.content.firstChild.cloneNode(true);
-  var shadowRoot = this.element.createShadowRoot();
-  shadowRoot.appendChild(clone);
+  this.element.appendChild(clone);
   var child = clone.firstChild;
-  this.value = new BaseLineInterpolation(child);
+  this.value = new BaseLineInterpolation(child.firstChild);
   child = child.nextSibling;
   this.left = new BaseLineIf(child);
   child = child.nextSibling;
