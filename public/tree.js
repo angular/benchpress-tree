@@ -58,10 +58,8 @@ function initBaseline() {
   bindAction('#baselineCreateDom', baselineCreateDom);
 }
 function bindAction(selector, callback) {
-  debugger
   var el = document.querySelector(selector);
   el.addEventListener('click', function callbackWrapper() {
-    debugger;
     callback();
   });
 }
