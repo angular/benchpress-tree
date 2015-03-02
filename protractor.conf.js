@@ -6,9 +6,8 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      //Important in order for benchpress to be able to force garbage collection, if desired
-      'args': ['--js-flags=--expose-gc'],
       //Important for benchpress to get timeline data from the browser
+      'args': ['--js-flags=--expose-gc'],
       'perfLoggingPrefs': {
         'traceCategories': 'blink.console,disabled-by-default-devtools.timeline'
       }
@@ -22,16 +21,9 @@ exports.config = {
   framework: 'jasmine2',
 
   beforeLaunch: function () {
-    var server = httpServer.createServer({
+    httpServer.createServer({
       showDir: false
-    });
-    server.listen('8080', 'localhost', function() {
-      var uri = 'http://localhos:8080';
-      console.log('Starting up http-server, serving '
-        + server.root
-        + ' on: '
-        + uri);
-    });
+    }).listen('8080', 'localhost');
   },
 
   jasmineNodeOpts: {
