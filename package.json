@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./runBenchmark.sh"
+    "test": "./node_modules/.bin/protractor protractorBenchmarks.conf.js"
   },
   "author": "jeffbcross",
   "license": "Apache 2",
