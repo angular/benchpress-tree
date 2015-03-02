@@ -44,7 +44,7 @@ If.prototype.update = function(value) {
   if (this.condition !== newCondition) {
     this.condition = newCondition;
     if (this.component) {
-      this.component.element.parentNode.removeChild(this.component.element);
+      this.component.element.remove();
       this.component = null;
     }
     if (this.condition) {
