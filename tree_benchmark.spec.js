@@ -1,11 +1,6 @@
 var benchpress = require('benchpress');
-var SeleniumWebDriverAdapter = 
-    require('benchpress/src/webdriver/selenium_webdriver_adapter').SeleniumWebDriverAdapter;
 var runner = new benchpress.Runner([
-  benchpress.bind(benchpress.WebDriverAdapter).toFactory(
-    function() { return new SeleniumWebDriverAdapter(global.browser); }, []
-  ),
-  benchpress.bind(benchpress.Options.DEFAULT_DESCRIPTION).toValue({'tree':'baseline'})
+  benchpress.SeleniumWebDriverAdapter.PROTRACTOR_BINDINGS
 ]);
 
 describe('deep tree baseline', function() {
