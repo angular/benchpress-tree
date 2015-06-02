@@ -7,7 +7,7 @@ var runner = new benchpress.Runner([
   //use 10 samples to calculate slope regression
   benchpress.bind(benchpress.RegressionSlopeValidator.SAMPLE_SIZE).toValue(20),
   //use the script metric to calculate slope regression
-  benchpress.bind(benchpress.RegressionSlopeValidator.METRIC).toValue('script'),
+  benchpress.bind(benchpress.RegressionSlopeValidator.METRIC).toValue('scriptTime'),
   benchpress.bind(benchpress.Options.FORCE_GC).toValue(true)
 ]);
 
