@@ -1,3 +1,4 @@
+var reflect = require('reflect-metadata');
 var benchpress = require('benchpress');
 var runner = new benchpress.Runner([
   //use protractor as Webdriver client
