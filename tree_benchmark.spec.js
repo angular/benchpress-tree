@@ -1,4 +1,4 @@
-var reflect = require('reflect-metadata');
+require('reflect-metadata');
 var benchpress = require('benchpress');
 var runner = new benchpress.Runner([
   //use protractor as Webdriver client
@@ -20,7 +20,7 @@ describe('deep tree baseline', function() {
     //Load the benchmark, with a tree depth of 9
     browser.get('http://localhost:8080/tree.html?depth='+depth);
     /*
-     * Tell benchpress to click the buttons to destroy and re-create the tree for each sample. 
+     * Tell benchpress to click the buttons to destroy and re-create the tree for each sample.
      * Benchpress will log the collected metrics after each sample is collected, and will stop
      * sampling as soon as the calculated regression slope for last 20 samples is stable.
      */
@@ -28,7 +28,7 @@ describe('deep tree baseline', function() {
       id: 'deep-tree',
       execute: function() {
         /*
-         * Will call querySelector in the browser, but benchpress is smart enough to ignore injected 
+         * Will call querySelector in the browser, but benchpress is smart enough to ignore injected
          * script.
          */
         $('#destroyDom').click();
