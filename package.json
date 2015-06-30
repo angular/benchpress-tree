@@ -11,6 +11,7 @@
   "dependencies": {
     "benchpress": "^2.0.0-alpha.25",
     "http-server": "^0.7.5",
-    "protractor": "^1.7.0"
+    "protractor": "^1.7.0",
+    "reflect-metadata": "^0.1.0"
   }
 }
