@@ -35,6 +35,8 @@ describe('deep tree baseline', function() {
         $('#createDom').click();
       },
       bindings: [
+        benchpress.bind(benchpress.Options.REQUEST_COUNT).toValue(true),
+        benchpress.bind(benchpress.Options.RECEIVED_DATA).toValue(true),
         benchpress.bind(benchpress.Options.SAMPLE_DESCRIPTION).toValue({
           depth: depth
         })
