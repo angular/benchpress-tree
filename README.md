@@ -13,6 +13,9 @@ $ ./node_modules/.bin/webdriver-manager update #Installs chromedriver and seleni
 $ ./node_modules/.bin/protractor protractor.conf.js #runs benchmark spec and logs output
 ```
 
+Note: you can use a local build of benchpress by linking to it with
+`npm link ${ANGULAR_DIR}/dist/build/benchpress_bundle` (assuming you've built it with `gulp benchpress.bundle`).
+
 ## See The Code
 
  * Benchmark code: [public/tree.html](public/tree.html), [public/tree.js](public/tree.js)

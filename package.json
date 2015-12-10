@@ -9,7 +9,7 @@
   "author": "jeffbcross",
   "license": "Apache 2",
   "dependencies": {
-    "benchpress": "^2.0.0-alpha.25",
+    "benchpress": "2.0.0-alpha.53",
     "http-server": "^0.7.5",
     "protractor": "^2.5.0",
     "reflect-metadata": "^0.1.0"
