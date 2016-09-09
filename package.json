@@ -1,5 +1,5 @@
 {
-  "name": "bp-example",
+  "name": "benchpress-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,9 +9,8 @@
   "author": "jeffbcross",
   "license": "Apache 2",
   "dependencies": {
-    "benchpress": "^2.0.0-alpha.25",
+    "@angular/benchpress": "^0.0.1",
     "http-server": "^0.7.5",
-    "protractor": "^2.5.0",
-    "reflect-metadata": "^0.1.0"
+    "protractor": "^4.0.0"
   }
 }

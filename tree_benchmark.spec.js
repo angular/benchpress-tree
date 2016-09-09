@@ -1,15 +1,14 @@
-require('reflect-metadata');
-var benchpress = require('benchpress');
+var benchpress = require('@angular/benchpress');
 var runner = new benchpress.Runner([
   //use protractor as Webdriver client
-  benchpress.SeleniumWebDriverAdapter.PROTRACTOR_BINDINGS,
+  benchpress.SeleniumWebDriverAdapter.PROTRACTOR_PROVIDERS,
   //use RegressionSlopeValidator to validate samples
-  benchpress.Validator.bindTo(benchpress.RegressionSlopeValidator),
+  {provide: benchpress.Validator, useExisting: benchpress.RegressionSlopeValidator},
   //use 10 samples to calculate slope regression
-  benchpress.bind(benchpress.RegressionSlopeValidator.SAMPLE_SIZE).toValue(20),
+  {provide: benchpress.RegressionSlopeValidator.SAMPLE_SIZE, useValue: 20},
   //use the script metric to calculate slope regression
-  benchpress.bind(benchpress.RegressionSlopeValidator.METRIC).toValue('scriptTime'),
-  benchpress.bind(benchpress.Options.FORCE_GC).toValue(true)
+  {provide: benchpress.RegressionSlopeValidator.METRIC, useValue: 'scriptTime'},
+  {provide: benchpress.Options.FORCE_GC, useValue: true}
 ]);
 
 describe('deep tree baseline', function() {
@@ -34,11 +33,10 @@ describe('deep tree baseline', function() {
         $('#destroyDom').click();
         $('#createDom').click();
       },
-      bindings: [
-        benchpress.bind(benchpress.Options.SAMPLE_DESCRIPTION).toValue({
-          depth: depth
-        })
-      ]
+      providers: [{
+        provide: benchpress.Options.SAMPLE_DESCRIPTION,
+        useValue: { depth: depth }
+      }]
     }).then(done, done.fail);
   });
 });
