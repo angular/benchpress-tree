@@ -3,7 +3,7 @@
 Reference implementation of a deep tree baseline benchmark with benchpress, adapted from the tree
 benchmark baseline in the [Angular repository](https://github.com/angular/angular).
 
-Full documentation found at https://github.com/angular/angular/blob/master/modules/benchpress/README.js.md
+Full documentation found at https://github.com/angular/angular/blob/master/packages/benchpress/README.md
 
 ## Run It
 
