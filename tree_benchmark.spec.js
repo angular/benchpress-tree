@@ -16,7 +16,7 @@ describe('deep tree baseline', function() {
     var depth = 11;
     //Tells protractor this isn't an Angular 1 application
     browser.ignoreSynchronization = true;
-    //Load the benchmark, with a tree depth of 9
+    //Load the benchmark, with a tree depth of 11
     browser.get('http://localhost:8080/tree.html?depth='+depth);
     /*
      * Tell benchpress to click the buttons to destroy and re-create the tree for each sample.
