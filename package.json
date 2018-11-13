@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/protractor protractorBenchmarks.conf.js"
+    "postinstall": "webdriver-manager update --gecko false --versions.chrome 2.41",
+    "test": "./node_modules/.bin/protractor protractor.conf.js"
   },
   "author": "jeffbcross",
   "license": "Apache 2",
   "dependencies": {
     "@angular/benchpress": "^0.1.0",
     "http-server": "^0.7.5",
-    "protractor": "^4.0.0"
+    "protractor": "5.1.2"
   }
 }
