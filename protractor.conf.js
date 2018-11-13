@@ -7,13 +7,14 @@ exports.config = {
     browserName: 'chrome',
     chromeOptions: {
       //Important for benchpress to get timeline data from the browser
-      'args': ['--js-flags=--expose-gc'],
+      'args': ['--js-flags=--expose-gc', '--no-sandbox'],
       'perfLoggingPrefs': {
-        'traceCategories': 'v8,blink.console,devtools.timeline'
+        'traceCategories': 'v8,blink.console,devtools.timeline,disabled-by-default-devtools.timeline'
       }
     },
     loggingPrefs: {
-      performance: 'ALL'
+      performance: 'ALL',
+      browser: 'ALL'
     }
   },
 
@@ -40,5 +41,5 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
-  },
+  }
 };
